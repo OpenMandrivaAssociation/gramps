@@ -1,11 +1,7 @@
-%define name	gramps
-%define version 2.2.6
-%define release %mkrel 1
-
 Summary:	Genealogical Research and Analysis Management Programming System
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		gramps
+Version:	2.2.8
+Release:	%mkrel 1
 License:	GPL
 Group:		Sciences/Other
 Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.bz2
@@ -56,7 +52,6 @@ desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="Genealogy" \
   --add-category="Science" \
-  --add-category="X-MandrivaLinux-MoreApplications-Sciences-Other" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 #icons
