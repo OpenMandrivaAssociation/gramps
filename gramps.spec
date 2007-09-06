@@ -1,8 +1,8 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
 Version:	2.2.8
-Release:	%mkrel 1
-License:	GPL
+Release:	%mkrel 2
+License:	GPLv2+
 Group:		Sciences/Other
 Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.bz2
 Source11:	%{name}-48.png
@@ -35,10 +35,9 @@ based plugin system.
 %prep
 %setup -q
 ./autogen.sh
-sed -i 's/2\.2/2\.3/' configure
 
 %build
-./configure --prefix=%_prefix --mandir=%_mandir --sysconfdir=%_sysconfdir \
+%configure2_5x \
   --enable-packager-mode
 %make
 
@@ -48,6 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -fr $RPM_BUILD_ROOT/var
 
 #menu
+perl -pi -e 's,%{name}.png,%{name},g' $RPM_BUILD_ROOT%{_datadir}/applications/*
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="Genealogy" \
@@ -55,9 +55,9 @@ desktop-file-install --vendor="" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 #icons
-install -m644 %{SOURCE11} -D $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
-install -m644 %{SOURCE12} -D $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-install -m644 %{SOURCE13} -D $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
+install -m644 %{SOURCE11} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+install -m644 %{SOURCE12} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+install -m644 %{SOURCE13} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 
 %find_lang %{name} --with-gnome
 
@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %update_mime_database
 %update_menus
 %post_install_gconf_schemas %{name}
+%update_icon_cache hicolor
 
 %preun
 %preun_uninstall_gconf_schemas %{name}
@@ -76,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %clean_scrollkeeper
 %{clean_menus}
+%clean_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(-, root, root)
@@ -94,8 +96,5 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/mime-info/*
 %{_datadir}/omf/%{name}
 %{_mandir}/man1/*
-%{_liconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_miconsdir}/%{name}.png
-
+%{_iconsdir}/hicolor/*/apps/%{name}.png
 
