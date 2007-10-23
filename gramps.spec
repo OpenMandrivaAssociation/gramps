@@ -1,7 +1,7 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	2.2.8
-Release:	%mkrel 2
+Version:	2.2.9
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sciences/Other
 Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.bz2
@@ -12,7 +12,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://gramps.sourceforge.net
 BuildArch: noarch
 BuildRequires:	scrollkeeper >= 0.1.4 docbook-utils
-BuildRequires:  gnome-python-gconf 
+BuildRequires:  gnome-python-gconf
 BuildRequires:  gnome-python-canvas
 BuildRequires:  gnome-python-gnomevfs
 BuildRequires:  pygtk2.0-libglade
@@ -21,11 +21,11 @@ BuildRequires:  libgnome-vfs2-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  gnome-doc-utils libxslt-proc
 BuildRequires:  intltool gnome-common
-Requires:       gnome-python-gconf 
+Requires:       gnome-python-gconf
 Requires:	gnome-python-canvas
 Requires:	gnome-python-gnomevfs
 Requires:	pygtk2.0-libglade
-Requires:	shared-mime-info 
+Requires:	shared-mime-info
 
 %description
 gramps (Genealogical Research and Analysis Management Programming
