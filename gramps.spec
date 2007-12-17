@@ -8,7 +8,6 @@ Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.bz2
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://gramps.sourceforge.net
 BuildArch: noarch
 BuildRequires:	scrollkeeper >= 0.1.4 docbook-utils
