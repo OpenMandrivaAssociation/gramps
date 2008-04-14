@@ -37,8 +37,7 @@ based plugin system.
 ./autogen.sh
 
 %build
-%configure2_5x \
-  --enable-packager-mode
+%configure2_5x
 %make
 
 %install
