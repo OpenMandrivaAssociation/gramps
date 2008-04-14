@@ -87,7 +87,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*.desktop
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
+%_datadir/mime/aliases
+%_datadir/mime/application/x-gedcom.xml
+%_datadir/mime/application/x-geneweb.xml
+%_datadir/mime/application/x-gramps-package.xml
+%_datadir/mime/application/x-gramps.xml
+%_datadir/mime/application/x-gramps-xml.xml
+%_datadir/mime/globs
+%_datadir/mime/magic
+%_datadir/mime/mime.cache
+%_datadir/mime/packages/%name.schemas
 %_datadir/mime/packages/%{name}.xml
+%_datadir/mime/subclasses
+%_datadir/mime/XMLnamespaces
 %_datadir/icons/gnome/48x48/mimetypes/*
 %_datadir/pixmaps/gramps.png
 %_datadir/icons/gnome/scalable/mimetypes/*
