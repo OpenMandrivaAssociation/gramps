@@ -82,7 +82,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 
 %doc README TODO
-%_sysconfdir/gconf/schemas/%{name}.schemas
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
 %dir %{_datadir}/%{name}
@@ -105,7 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/icons/gnome/scalable/mimetypes/*
 %_datadir/application-registry/%{name}.applications
 %_datadir/mime-info/*
-%{_datadir}/omf/%{name}
 %{_mandir}/man1/*
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 
