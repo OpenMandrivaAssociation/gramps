@@ -37,7 +37,7 @@ based plugin system.
 
 %build
 ./autogen.sh
-%configure2_5x
+%configure2_5x --disable-mime-install --enable-packager-mode
 %make
 
 %install
@@ -89,4 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/application-registry/%{name}.applications
 %_datadir/mime-info/*
 %{_mandir}/man1/*
+%lang(fr) %_mandir/fr/man1/gramps.1.*
+%lang(nl) %_mandir/nl/man1/gramps.1.*
+%lang(pl) %_mandir/pl/man1/gramps.1.*
+%lang(sv) %_mandir/sv/man1/gramps.1.*
 %{_iconsdir}/hicolor/*/apps/%{name}.png
