@@ -1,10 +1,10 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	3.0.0
+Version:	3.0.1
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sciences/Other
-Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.gz
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
@@ -34,15 +34,15 @@ based plugin system.
 
 %prep
 %setup -q
-./autogen.sh
 
 %build
+./autogen.sh
 %configure2_5x
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 rm -fr $RPM_BUILD_ROOT/var
 
 #menu
@@ -67,11 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %update_scrollkeeper
 %update_mime_database
 %update_menus
-%post_install_gconf_schemas %{name}
 %update_icon_cache hicolor
-
-%preun
-%preun_uninstall_gconf_schemas %{name}
 
 %postun
 %clean_scrollkeeper
@@ -86,19 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*.desktop
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
-%_datadir/mime/aliases
-%_datadir/mime/application/x-gedcom.xml
-%_datadir/mime/application/x-geneweb.xml
-%_datadir/mime/application/x-gramps-package.xml
-%_datadir/mime/application/x-gramps.xml
-%_datadir/mime/application/x-gramps-xml.xml
-%_datadir/mime/globs
-%_datadir/mime/magic
-%_datadir/mime/mime.cache
-%_datadir/mime/packages/%name.schemas
 %_datadir/mime/packages/%{name}.xml
-%_datadir/mime/subclasses
-%_datadir/mime/XMLnamespaces
 %_datadir/icons/gnome/48x48/mimetypes/*
 %_datadir/pixmaps/gramps.png
 %_datadir/icons/gnome/scalable/mimetypes/*
@@ -106,4 +90,3 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/mime-info/*
 %{_mandir}/man1/*
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-
