@@ -63,16 +63,20 @@ install -m644 %{SOURCE13} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/%{na
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdkversion < 200900
 %post
 %update_scrollkeeper
 %update_mime_database
 %update_menus
 %update_icon_cache hicolor
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_scrollkeeper
 %{clean_menus}
 %clean_icon_cache hicolor
+%endif
 
 %files -f %{name}.lang
 %defattr(-, root, root)
