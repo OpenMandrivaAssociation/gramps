@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	3.0.4
+Version:	3.1.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sciences/Other
@@ -37,7 +37,6 @@ based plugin system.
 %setup -q
 
 %build
-./autogen.sh
 %configure2_5x --disable-mime-install --enable-packager-mode
 %make
 
