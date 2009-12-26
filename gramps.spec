@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	3.1.2
+Version:	3.1.3
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sciences/Other
@@ -9,7 +9,7 @@ Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-URL:		http://gramps.sourceforge.net
+URL:		http://www.gramps-project.org
 BuildArch: noarch
 BuildRequires:	scrollkeeper >= 0.1.4 docbook-utils
 BuildRequires:  gnome-python-gconf
