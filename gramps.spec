@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	3.1.3
+Version:	3.2.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sciences/Other
@@ -62,21 +62,6 @@ install -m644 %{SOURCE13} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/%{na
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post
-%update_scrollkeeper
-%update_mime_database
-%update_menus
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_scrollkeeper
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
 
 %files -f %{name}.lang
 %defattr(-, root, root)
