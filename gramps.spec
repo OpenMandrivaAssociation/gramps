@@ -1,7 +1,7 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
 Version:	3.2.2
-Release:	%mkrel 1
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Sciences/Other
 Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.gz
@@ -26,6 +26,7 @@ Requires:	gnome-python-canvas
 Requires:	gnome-python-gnomevfs
 Requires:	gnome-python-gtkspell
 Requires:	pygtk2.0-libglade
+Requires:	python-enchant
 Requires:	shared-mime-info
 
 %description
