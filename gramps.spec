@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	3.2.5
+Version:	3.2.6
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Sciences/Other
@@ -8,7 +8,6 @@ Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.gz
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://www.gramps-project.org
 BuildArch: noarch
 BuildRequires:	scrollkeeper >= 0.1.4 docbook-utils
@@ -42,12 +41,11 @@ based plugin system.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
-rm -fr $RPM_BUILD_ROOT/var
+rm -fr %buildroot/var
 
 #menu
-perl -pi -e 's,%{name}.png,%{name},g' $RPM_BUILD_ROOT%{_datadir}/applications/*
+perl -pi -e 's,%{name}.png,%{name},g' %buildroot%{_datadir}/applications/*
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --remove-category="Genealogy" \
@@ -55,14 +53,14 @@ desktop-file-install --vendor="" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 #icons
-install -m644 %{SOURCE11} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/48x48/apps/%{name}.png
-install -m644 %{SOURCE12} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-install -m644 %{SOURCE13} -D $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/%{name}.png
+install -m644 %{SOURCE11} -D %buildroot%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+install -m644 %{SOURCE12} -D %buildroot%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+install -m644 %{SOURCE13} -D %buildroot%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 
 %find_lang %{name} --with-gnome
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %buildroot
 
 %files -f %{name}.lang
 %defattr(-, root, root)
