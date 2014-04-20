@@ -1,7 +1,7 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
 Version:	4.0.3
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Sciences/Other
 Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.gz
@@ -17,12 +17,19 @@ Requires:	python-graphviz
 Requires:	shared-mime-info
 Requires:	xdg-utils
 Requires:	python-gi
+Requires:	typelib(GExiv2)
+Requires:	typelib(Pango)
+Requires:	typelib(PangoCairo)
+Requires:	typelib(GdkPixbuf)
+Requires:	typelib(Gdk)
+Requires:	typelib(GLib)
+
 Suggests:	gtkspell3
 Suggests:	typelib(Goocanvas) = 2.0
 Suggests:	typelib(WebKit) = 3.0
 Suggests:	fonts-ttf-freefont
 #Suggest it for geography functionality
-Suggests:	python-osmgpsmap
+Suggests:	typelib(OsmGpsMap)
 
 %description
 gramps (Genealogical Research and Analysis Management Programming
