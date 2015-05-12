@@ -13,7 +13,6 @@ BuildArch:	noarch
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 Requires:       typelib(Gtk) = 3.0
-Requires:	python-graphviz
 Requires:	shared-mime-info
 Requires:	xdg-utils
 Requires:	python-gi
