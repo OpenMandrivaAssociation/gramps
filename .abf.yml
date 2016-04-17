@@ -1,8 +1,5 @@
-removed_sources:
-  gramps-3.4.2.tar.gz: 66ce0b41d8d4952631c756bd289de86f6eb66a9c
-  gramps-4.0.3.tar.gz: eff2e6b802c1e4747cd218a2d8f3c346346642d0
 sources:
   gramps-16.png: 14303fe704c26cc73c5461361bbd66d1fcaadd21
   gramps-32.png: 467a90ec5cf9583a86aedd5a5abe247ef1e0a688
-  gramps-4.1.3.tar.gz: f11d2d07573ecf0da99ffbd546278e35b02a8ceb
+  gramps-4.2.3.tar.gz: 54151737ba82b9eaf022abc74b5cda8d8c5e80da
   gramps-48.png: 58ceab8e3f768a6fd125886c48a921df1d2231fd

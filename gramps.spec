@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	4.1.3
+Version:	4.2.3
 Release:	1
 License:	GPLv2+
 Group:		Sciences/Other
@@ -16,6 +16,8 @@ Requires:       typelib(Gtk) = 3.0
 Requires:	shared-mime-info
 Requires:	xdg-utils
 Requires:	python-gi
+Requires:	python-bsddb3
+Requires:	python-icu
 Requires:	typelib(GExiv2)
 Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
