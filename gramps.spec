@@ -12,6 +12,8 @@ URL:		http://www.gramps-project.org
 BuildArch:	noarch
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
+BuildRequires:	python3
+BuildRequires:	python3egg(setuptools)
 Requires:       typelib(Gtk) = 3.0
 Requires:	shared-mime-info
 Requires:	xdg-utils
