@@ -15,9 +15,9 @@ BuildRequires:	intltool
 Requires:       typelib(Gtk) = 3.0
 Requires:	shared-mime-info
 Requires:	xdg-utils
-Requires:	python-gi
-Requires:	python-bsddb3
-Requires:	python-icu
+Requires:	python3-gi
+Requires:	python3-bsddb3
+Requires:	python3-icu
 Requires:	typelib(GExiv2)
 Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
@@ -41,12 +41,12 @@ based plugin system.
 %setup -q
 
 %build
-python setup.py build
+python3 setup.py build
 
 %install
-python setup.py install --root %{buildroot}
+python3 setup.py install --root %{buildroot}
 # fix it:
-perl -pi -e "s@%{buildroot}@@" %buildroot/%python_sitelib/gramps/gen/utils/resource-path
+perl -pi -e "s@%{buildroot}@@" %buildroot/%python3_sitelib/gramps/gen/utils/resource-path
 rm -fr %{buildroot}/var
 
 #menu
@@ -76,6 +76,6 @@ install -m644 %{SOURCE13} -D %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}
 %{_datadir}/mime-info/%{name}.*
 %{_mandir}/man1/%{name}.1*
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%python_sitelib/%name
-%python_sitelib/*.egg-info
+%python3_sitelib/%name
+%python3_sitelib/*.egg-info
 
