@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	4.2.3
+Version:	4.2.8
 Release:	2
 License:	GPLv2+
 Group:		Sciences/Other
@@ -69,7 +69,7 @@ install -m644 %{SOURCE13} -D %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}
 %files -f %{name}.lang
 %doc README TODO
 %{_bindir}/%{name}
-%{_datadir}/appdata/gramps.appdata.xml
+%{_datadir}/metainfo/gramps.appdata.xml
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}
 %{_datadir}/mime/packages/%{name}.xml
