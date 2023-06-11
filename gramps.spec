@@ -1,10 +1,10 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	4.2.8
-Release:	3
+Version:	5.1.5
+Release:	1
 License:	GPLv2+
 Group:		Sciences/Other
-Source0:	http://prdownloads.sourceforge.net/gramps/%{name}-%{version}.tar.gz
+Source0:	https://github.com/gramps-project/gramps/archive/refs/tags/v%{version}.tar.gz
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
@@ -39,7 +39,7 @@ System) is a GNOME based genealogy program supporting a Python
 based plugin system.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 python setup.py build
@@ -50,33 +50,18 @@ python setup.py install --root %{buildroot}
 perl -pi -e "s@%{buildroot}@@" %buildroot/%python_sitelib/gramps/gen/utils/resource-path
 rm -fr %{buildroot}/var
 
-#menu
-perl -pi -e 's,%{name}.png,%{name},g' %{buildroot}%{_datadir}/applications/*
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --remove-category="Genealogy" \
-  --add-category="Science" \
-  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
-
-#icons
-install -m644 %{SOURCE11} -D %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
-install -m644 %{SOURCE12} -D %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-install -m644 %{SOURCE13} -D %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
-
 %find_lang %{name} --with-gnome --with-man
 
 %files -f %{name}.lang
-%doc README TODO
 %{_bindir}/%{name}
 %{_datadir}/metainfo/gramps.appdata.xml
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}
 %{_datadir}/mime/packages/%{name}.xml
-%{_datadir}/icons/gnome/*/mimetypes/*
-%{_iconsdir}/%{name}.png
 %{_datadir}/mime-info/%{name}.*
 %{_mandir}/man1/%{name}.1*
-%{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/*/mimetypes/*
+%{_iconsdir}/hicolor/*/apps/%{name}.*
 %python_sitelib/%name
 %python_sitelib/*.egg-info
-
+%doc %{_docdir}/gramps
