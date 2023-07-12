@@ -1,6 +1,6 @@
 Summary:	Genealogical Research and Analysis Management Programming System
 Name:		gramps
-Version:	5.1.5
+Version:	5.1.6
 Release:	1
 License:	GPLv2+
 Group:		Sciences/Other
