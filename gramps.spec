@@ -8,7 +8,7 @@ Source0:	https://github.com/gramps-project/gramps/archive/refs/tags/v%{version}.
 Source11:	%{name}-48.png
 Source12:	%{name}-32.png
 Source13:	%{name}-16.png
-URL:		http://www.gramps-project.org
+URL:		https://www.gramps-project.org
 BuildArch:	noarch
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
